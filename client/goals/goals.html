@@ -1,0 +1,9 @@
+<div id='container'>
+  <ul class='goals'>
+    <li class='goal' ng-repeat='goal in data.goals'>
+      <h3 class='title'>{{ goal.title }}</h3>
+      <p class='deadline'>{{ goal.deadline }}</p>
+      <p class='progress' ng-repeat='progress in data.progress'>({{ progress.date }}) {{ progress.log }}</p>
+    </li>
+  </ul>
+</div>
