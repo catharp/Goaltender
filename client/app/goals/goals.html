@@ -13,13 +13,12 @@
   <ul class='goals'>
     <li class='goal' ng-repeat='goal in goals'>
       <text class='title'>{{ goal.title }}</text>
-      <time class='deadline' am-time-ago='goal.deadline'>{{ goal.deadline }}</time>
+      <time class='deadline' am-time-ago='goal.deadline'></time>
       <form>
         <input type='text' ng-model='goal.newProgress' placeholder='Log some progress!' required />
         <input type='submit' ng-click='addProgress(goal)' />
       </form>
-      <tt>{{ goal.progress }}</tt>
-      <p class='progress' ng-repeat='progress in goal.progress'>({{ progress.date }}) {{ progress.log }}</p>
+      <p class='progress' ng-repeat='progress in goal.progress'><tt am-time-ago='progress.date'></tt> {{ progress.log }}</p>
     </li>
   </ul>
 </div>

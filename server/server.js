@@ -14,6 +14,7 @@ app.use(express.static(__dirname + '/../client'));
 
 app.get('/goals', requestHandler.get);
 app.post('/goals', requestHandler.add);
+app.post('/goals/progress', requestHandler.progress);
 
 const port = 3000
 app.listen(port);

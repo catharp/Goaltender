@@ -6,7 +6,7 @@ angular.module('goaltender.services', [])
       method: 'GET',
       url: '/goals'
     })
-    .then(function(res) {
+    .then(function (res) {
       return res.data;
     });
   };
@@ -19,8 +19,17 @@ angular.module('goaltender.services', [])
     });
   };
 
+  var progress = function (goal) {
+    return $http({
+      method: 'POST',
+      url: '/goals/progress',
+      data: goal
+    });
+  };
+
   return {
     get: get,
-    add: add
+    add: add,
+    progress: progress
   };
 })

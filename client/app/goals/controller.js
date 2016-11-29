@@ -15,6 +15,7 @@ angular.module('goaltender.controller', [])
       date: Date.now(),
       log: goal.newProgress
     });
+    Goals.progress(goal);
   };
 
   $scope.addGoal = function() {
