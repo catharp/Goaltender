@@ -1,4 +1,4 @@
-angular.module('goaltender', ['goaltender.services', 'goaltender.controller', 'ngRoute'])
+angular.module('goaltender', ['goaltender.services', 'goaltender.controller', 'ngRoute', 'angularMoment'])
 .config(function ($routeProvider) {
   $routeProvider
     .when('/goals', {

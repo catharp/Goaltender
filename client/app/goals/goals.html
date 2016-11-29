@@ -1,14 +1,20 @@
 <div id='container'>
   <form>
-    <input name='newGoal' type='text' ng-model='newGoal.title'
-      placeholder="Set a new goal!" required />
+    <input type='text' ng-model='newGoal.title' placeholder='Set a new goal!' required />
+    <label>How long will it take?</label>
+    <select ng-model='newGoal.deadline' required>
+      <option value='7'>a week</option>
+      <option value='30'>a month</option>
+      <option value='90'>a quarter</option>
+      <option value='365'>a year</option>
+    </select>
     <input type='submit' ng-click='addGoal()'>
   </form>
   <ul class='goals'>
     <li class='goal' ng-repeat='goal in goals'>
       <h3 class='title'>{{ goal.title }}</h3>
-      <p class='deadline'>{{ goal.deadline }}</p>
-      <p class='progress' ng-repeat='progress in goal.progress'>({{ progress.date }}) {{ progress.log }}</p>
+      <time class='deadline' am-time-ago='goal.deadline'>{{ goal.deadline }}</time>
+      <time class='progress' ng-repeat='progress in goal.progress'>({{ progress.date }}) {{ progress.log }}</p>
     </li>
   </ul>
 </div>
