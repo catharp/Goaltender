@@ -10,11 +10,13 @@ mongoose.connect('mongodb://localhost/goaltender');
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-app.use(express.static(__dirname + '/../../client'));
+app.use(express.static(__dirname + '/../client'));
 
 app.get('/goals', goalsController.get);
 app.get('/goals', goalsController.add);
 
-app.listen(3000);
+const port = 3000
+app.listen(port);
+console.log('put it in my', port);
 
 module.exports = app;

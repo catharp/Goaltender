@@ -1,7 +1,7 @@
 angular.module('goaltender', ['ngRoute'])
 .config(function ($routeProvider) {
   $routeProvider
-    .when('/links', {
+    .when('/goals', {
       templateUrl: 'app/goals/goals.html',
       controller: 'GoalsController'
     })
