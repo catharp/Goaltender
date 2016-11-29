@@ -24,6 +24,7 @@ angular.module('goaltender.controller', [])
       log: goal.newProgress
     });
     Goals.progress(goal);
+    delete goal.newProgress;
   };
 
   $scope.abandonGoal = function(goal) {

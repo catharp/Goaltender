@@ -13,7 +13,7 @@
   <li class='goal' ng-repeat='goal in goals'>
     <text class='title'>{{ goal.title }}!</text>
     <tt class='deadline'>due <tt am-time-ago='goal.deadline'></tt></tt>
-    <form class='addProgress'>
+    <form novalidate class='addProgress'>
       <input type='text' ng-model='goal.newProgress' placeholder='Log some progress!' required />
       <input type='submit' ng-click='addProgress(goal)' />
     </form>
