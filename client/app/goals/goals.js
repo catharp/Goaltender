@@ -4,6 +4,8 @@ angular.module('goaltender.goals', [])
   $scope.newGoal = {};
   $scope.data = {};
 
+  console.log('in GoalsController...');
+
 
   const setGoals = function () {
     Goals.get()
