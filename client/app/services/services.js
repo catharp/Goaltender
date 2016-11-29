@@ -7,12 +7,11 @@ angular.module('goaltender.services', [])
       url: '/goals'
     })
     .then(function(res) {
-      return res;
+      return res.data;
     });
   };
 
   var add = function (goal) {
-    console.log('adding...');
     return $http({
       method: 'POST',
       url: '/goals',

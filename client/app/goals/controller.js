@@ -7,7 +7,6 @@ angular.module('goaltender.controller', [])
   var setGoals = function () {
     Goals.get()
       .then(function (goals) {
-        console.log('got goals...');
         $scope.goals = goals;
       });
   };

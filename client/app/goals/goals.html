@@ -5,9 +5,6 @@
     <input type='submit' ng-click='addGoal()'>
   </form>
   <ul class='goals'>
-    <li>
-      displaying goals...
-    </li>
     <li class='goal' ng-repeat='goal in goals'>
       <h3 class='title'>{{ goal.title }}</h3>
       <p class='deadline'>{{ goal.deadline }}</p>
