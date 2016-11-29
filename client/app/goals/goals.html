@@ -1,25 +1,24 @@
-<div id='container'>
-  <form>
-    <input type='text' ng-model='newGoal.title' placeholder='Set a new goal!' required />
-    <label>How long will it take?</label>
-    <select ng-model='newGoal.deadline' required>
-      <option value='7'>a week</option>
-      <option value='30'>a month</option>
-      <option value='90'>a quarter</option>
-      <option value='365'>a year</option>
-    </select>
-    <input type='submit' ng-click='addGoal()' />
-  </form>
-  <ul class='goals'>
-    <li class='goal' ng-repeat='goal in goals'>
-      <text class='title'>{{ goal.title }}</text>
-      <time class='deadline' am-time-ago='goal.deadline'></time>
-      <form>
-        <input type='text' ng-model='goal.newProgress' placeholder='Log some progress!' required />
-        <input type='submit' ng-click='addProgress(goal)' />
-      </form>
-      <p class='progress' ng-repeat='progress in goal.progress'><tt am-time-ago='progress.date'></tt> {{ progress.log }}</p>
-      <button class='abandon' ng-click='abandonGoal(goal)'>fuck this...</button>
-    </li>
-  </ul>
-</div>
+<form class='addGoal'>
+  <input type='text' ng-model='newGoal.title' placeholder='Set a new goal!' required />
+  <label>How long will it take?</label>
+  <select ng-model='newGoal.deadline' required>
+    <option value='7'>a week</option>
+    <option value='30'>a month</option>
+    <option value='90'>a quarter</option>
+    <option value='365'>a year</option>
+  </select>
+  <input type='submit' ng-click='addGoal()' />
+</form>
+<ul class='goals'>
+  <li class='goal' ng-repeat='goal in goals'>
+    <text class='title'>{{ goal.title }}!</text>
+    <tt class='deadline'>due <tt am-time-ago='goal.deadline'></tt></tt>
+    <form class='addProgress'>
+      <input type='text' ng-model='goal.newProgress' placeholder='Log some progress!' required />
+      <input type='submit' ng-click='addProgress(goal)' />
+    </form>
+    <p class='progress' ng-repeat='progress in goal.progress'><tt am-time-ago='progress.date'></tt> {{ progress.log }}</p>
+    <button class='finish' ng-click='abandonGoal(goal)'>nailed it!</button>
+    <button class='abandon' ng-click='abandonGoal(goal)'>fuck this...</button>
+  </li>
+</ul>

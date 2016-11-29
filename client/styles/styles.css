@@ -1,4 +1,46 @@
 body {
-  margin: 10px;
+  background: #FFEE66;
+  margin: 40px;
   font-family: arial, sans-serif;
+}
+input, button, select {
+  border-radius: 3px;
+}
+ul {
+  list-style-type: none;
+}
+.logo {
+  font-size: 36px;
+  margin: 0;
+  padding: 0;
+}
+.tagline {
+  margin: 0 0 0 60px;
+}
+.addGoal {
+  margin-top: 30px;
+}
+.goal {
+  background: #FFFBF2;
+  border-radius: 5px;
+  margin: 20px 40px 20px 0px;
+  padding: 20px 20px 10px 20px;
+}
+.title {
+  font-weight: bold;
+  font-size: 24px;
+  margin: 0px;
+}
+.deadline {
+  float: right;
+  font-weight: bold;
+}
+.addProgress {
+  margin: 10px;
+}
+.progress {
+  margin-left: 20px;
+}
+.abandon {
+  float: right;
 }
