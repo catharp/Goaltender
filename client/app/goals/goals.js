@@ -4,7 +4,7 @@ angular.module('goaltender.goals', [])
   $scope.data = {};
 
   const initializeGoals = function () {
-    Goals.get()
+    Goals.getAll()
       .then(function (goals) {
         $scope.data.goals = goals;
       })
