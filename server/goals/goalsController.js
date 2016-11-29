@@ -4,7 +4,7 @@ var Goal = require('./goalModel.js');
 var get = Q.nbind(Goal.find);
 var add = Q.nbind(Goal.create);
 
-moule.exports = {
+module.exports = {
   get: function(req, res, next) {
     get({})
       .then(function(goals) {

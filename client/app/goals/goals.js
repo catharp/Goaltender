@@ -1,10 +1,12 @@
 angular.module('goaltender.goals', [])
 
 .controller('GoalsController', function($scope, Goals) {
+  $scope.newGoal = {};
   $scope.data = {};
 
-  const initializeGoals = function () {
-    Goals.getAll()
+
+  const setGoals = function () {
+    Goals.get()
       .then(function (goals) {
         $scope.data.goals = goals;
       })
@@ -13,5 +15,5 @@ angular.module('goaltender.goals', [])
       });
   };
 
-  initializeGoals();
+  setGoals();
 });

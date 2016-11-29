@@ -1,4 +1,10 @@
 <div id='container'>
+  <form name='addGoal' ng-submit='add()'>
+    <input name='newGoal' type='text' ng-model='newGoal.title'
+      placeholder="Set a new goal!" required />
+    <button type='submit'>Add</button> 
+  </form>
+  </form>
   <ul class='goals'>
     <li class='goal' ng-repeat='goal in data.goals'>
       <h3 class='title'>{{ goal.title }}</h3>
