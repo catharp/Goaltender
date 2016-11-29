@@ -7,7 +7,7 @@ angular.module('goaltender.services', [])
       url: '/goals'
     })
     .then(function(res) {
-      return res.data;
+      return res;
     });
   };
 
