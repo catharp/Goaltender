@@ -1,4 +1,4 @@
-angular.module('goaltender', [])
+angular.module('goaltender', ['ngRoute'])
 .config(function ($routeProvider) {
   $routeProvider
     .when('/links', {
