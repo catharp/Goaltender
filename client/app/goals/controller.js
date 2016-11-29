@@ -13,9 +13,7 @@ angular.module('goaltender.controller', [])
   $scope.addGoal = function() {
     $scope.newGoal.deadline = Date.now() + $scope.newGoal.deadline * 24 * 60 * 60 * 1000;
     Goals.add($scope.newGoal)
-      .then(function() {
-        $location.path('/');
-      });
+      .then(() => $location.path('/'));
   };
 
   $scope.addProgress = function(goal) {
@@ -29,7 +27,7 @@ angular.module('goaltender.controller', [])
 
   $scope.abandonGoal = function(goal) {
     Goals.abandon(goal)
-      .then( () => $location.path('/'));
+      .then(() => $location.path('/'));
   };
 
 });
