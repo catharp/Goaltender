@@ -1,21 +1,11 @@
-var Q = require('q');
 var Goal = require('./goalModel.js');
-
-var get = Q.nbind(Goal.find);
-var add = Q.nbind(Goal.create);
 
 module.exports = {
   get: function(req, res, next) {
-    get({})
-      .then(function(goals) {
-        res.json(goals);
-      });
+    Goal.find({}, (err, goals) => err ? console.error(err) : res.json(goals));
   },
 
   add: function(req, res, next) {
-    add({goal: req.body.goal})
-      .then(function(goal) {
-        res.json(goal);
-      });
+    Goal.create(req.body, (err, goal) => err ? console.error(err) : res.json(goal));
   }
 };

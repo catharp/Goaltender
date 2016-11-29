@@ -5,7 +5,6 @@ angular.module('goaltender.controller', [])
   $scope.goals = {};
 
   var setGoals = function () {
-    console.log('getting goals...');
     Goals.get()
       .then(function (goals) {
         console.log('got goals...');
@@ -14,7 +13,6 @@ angular.module('goaltender.controller', [])
   };
 
   $scope.addGoal = function () {
-    console.log('adding goal...');
     Goals.add($scope.newGoal)
       .then(function() {
         $location.path('/');

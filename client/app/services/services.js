@@ -12,6 +12,7 @@ angular.module('goaltender.services', [])
   };
 
   var add = function (goal) {
+    console.log('adding...');
     return $http({
       method: 'POST',
       url: '/goals',
