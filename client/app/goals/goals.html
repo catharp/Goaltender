@@ -19,6 +19,7 @@
         <input type='submit' ng-click='addProgress(goal)' />
       </form>
       <p class='progress' ng-repeat='progress in goal.progress'><tt am-time-ago='progress.date'></tt> {{ progress.log }}</p>
+      <button class='abandon' ng-click='abandonGoal(goal)'>fuck this...</button>
     </li>
   </ul>
 </div>

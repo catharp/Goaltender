@@ -1,7 +1,7 @@
 angular.module('goaltender.services', [])
 
 .factory('Goals', function($http) {
-  var get = function () {
+  function get () {
     return $http({
       method: 'GET',
       url: '/goals'
@@ -11,7 +11,7 @@ angular.module('goaltender.services', [])
     });
   };
 
-  var add = function (goal) {
+  function add (goal) {
     return $http({
       method: 'POST',
       url: '/goals',
@@ -19,7 +19,7 @@ angular.module('goaltender.services', [])
     });
   };
 
-  var progress = function (goal) {
+  function progress (goal) {
     return $http({
       method: 'POST',
       url: '/goals/progress',
@@ -27,9 +27,18 @@ angular.module('goaltender.services', [])
     });
   };
 
+  function abandon (goal) {
+    return $http({
+      method: 'POST',
+      url: '/goals/abandon',
+      data: goal
+    });
+  };
+
   return {
     get: get,
     add: add,
-    progress: progress
+    progress: progress,
+    abandon: abandon
   };
 })
