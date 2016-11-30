@@ -2,14 +2,15 @@
 <html ng-app="goaltender">
   <head>
     <meta charset="utf-8" />
-    <script src="keys.js"></script>
     <meta name="google-signin-client_id" content="195686985258-50dp1jufuc2hoes7sa7strsamh3nuutr.apps.googleusercontent.com">
     <title>Goaltender</title>
     <link rel="stylesheet" type="text/css" href="styles/styles.css" />
   </head>
   <body>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    <script src="auth.js"></script>
+    <div class="google g-signin2" data-onsuccess="onSignIn"></div>
+    <button class="google" href="#" onclick="onSignOut()">Sign out</button>
 
     <h1 class="logo">Goaltender</h1>
     <tt class="tagline">Tend to your goals</tt>

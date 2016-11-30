@@ -15,5 +15,11 @@ module.exports = {
 
   abandon: function (req, res) {
     Goal.find({_id: req.body._id}).remove((err, goal) => err ? console.error(err) : res.json(goal));
+  },
+
+  signin: function (req, res) {
+    console.log(req.body.idToken);
+    
+    res.json('rumplestiltskin');
   }
 };

@@ -16,6 +16,7 @@ app.get('/goals', requestHandler.get);
 app.post('/goals', requestHandler.add);
 app.post('/goals/progress', requestHandler.progress);
 app.post('/goals/abandon', requestHandler.abandon);
+app.post('/signin', requestHandler.signin);
 
 const port = 3000
 app.listen(port);
