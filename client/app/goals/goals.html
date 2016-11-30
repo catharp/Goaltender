@@ -1,5 +1,9 @@
-<form class="addGoal">
-  <input type="text" ng-model="newGoal.title" placeholder="Set a new goal!" required />
+<form ng-if="!building" class="addGoal">
+  <input type="text" ng-model="$parent.newGoal.title" placeholder="Set a new goal!" required />
+  <input type="submit" value="get started" ng-click="buildGoal()" />
+</form>
+<form ng-if="building" class="addGoal">
+  <text>OK! Let's {{ $parent.newGoal.title }}... </text>
   <label>How long will it take?</label>
   <select ng-model="newGoal.deadline" required>
     <option value="7">a week</option>
@@ -9,6 +13,7 @@
   </select>
   <input type="submit" value="let's do it" ng-click="addGoal()" />
 </form>
+
 <ul class="goals">
   <li class="goal" ng-repeat="goal in goals">
     <text class="title">{{ goal.title }}!</text>
